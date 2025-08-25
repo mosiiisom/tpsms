@@ -1,0 +1,72 @@
+# Python-specific ignores
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
+pip-wheel-metadata/
+*.whl
+
+# PyCharm-specific ignores
+.idea/
+*.iml
+
+# Test and development files
+main.py
+tests/
+*.test.py
+test_*.py
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+
+# Environment and configuration files
+*.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs and temporary files
+*.log
+*.log.*
+*.tmp
+tmp/
+temp/
+
+# Dependency directories
+site-packages/
+pip-selfcheck.json
+
+# Distribution and packaging
+MANIFEST
+MANIFEST.in
+
+# macOS-specific
+.DS_Store
+
+# Windows-specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Sensitive data
+*.pem
+*.key
+*.crt
+*.cert
+*.password
+*.secret
+
+# Project-specific ignores
+# Add any additional files or directories specific to your project
+*.bak
+*.swp
+*.swo
