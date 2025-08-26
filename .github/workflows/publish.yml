@@ -9,9 +9,9 @@ jobs:
   build-and-publish:
     name: Build and Publish to PyPI
     runs-on: ubuntu-latest
-    environment: pypi  # Optional: requires manual approval
+    environment: pypi
     permissions:
-      id-token: write  # Required for Trusted Publishing
+      id-token: write
 
     steps:
       # Checkout the repository
