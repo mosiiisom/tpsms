@@ -1,4 +1,4 @@
-name: Publish tplink_sms to PyPI
+name: Publish tpsms to PyPI
 
 on:
   push:
@@ -9,10 +9,9 @@ jobs:
   build-and-publish:
     name: Build and Publish to PyPI
     runs-on: ubuntu-latest
-    environment: pypi
+    environment: pypi  # Optional: requires manual approval
     permissions:
-      id-token: write
-      contents: read
+      id-token: write  # Required for Trusted Publishing
 
     steps:
       # Checkout the repository
@@ -31,11 +30,15 @@ jobs:
       - name: Install build tools
         run: |
           python -m pip install --upgrade pip
-          pip install build
+          pip install build twine
 
       # Build the package
       - name: Build package
         run: python -m build
+
+      # Check package
+      - name: Check package
+        run: twine check dist/*
 
       # Publish to TestPyPI (optional, for testing)
       - name: Publish to TestPyPI
@@ -44,9 +47,12 @@ jobs:
           repository-url: https://test.pypi.org/legacy/
           skip-existing: true  # Skip if version exists
           packages-dir: dist/
+          print-hash: true  # Show file hashes for debugging
 
       # Publish to PyPI
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           packages-dir: dist/
+          skip-existing: true  # Skip if version exists
+          print-hash: true  # Show file hashes for debugging
