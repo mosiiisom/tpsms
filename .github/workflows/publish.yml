@@ -1,4 +1,3 @@
-```yaml
 name: Publish tplink_sms to PyPI
 
 on:
@@ -50,4 +49,3 @@ jobs:
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           packages-dir: dist/
-```
