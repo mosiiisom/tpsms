@@ -13,7 +13,7 @@ setup(
     description="A Python client for TP-Link router SMS functionality",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/mosiiisom/tplink_sms",
+    url="https://github.com/mosiiisom/tpsms",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
