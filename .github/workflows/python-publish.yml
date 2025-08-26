@@ -3,7 +3,7 @@ name: Publish tpsms to PyPI
 on:
   push:
     tags:
-      - 'v*'  # Trigger on tags like v0.1.0, v0.1.1, etc.
+      - 'v*'
 
 jobs:
   build-and-publish:
